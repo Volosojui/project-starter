@@ -15,9 +15,17 @@ module.exports = {
     files: [BUILD + '/**']
   },
   githubPages: {
-    src: DIST + '/**/*',
-    options: {
-      message: 'gh-pages'
+    local: {
+      src: BUILD + '/**/*',
+      options: {
+        message: 'gh-pages'
+      }
+    },
+    production: {
+      src: DIST + '/**/*',
+      options: {
+        message: 'gh-pages'
+      }
     }
   },
   copy: {

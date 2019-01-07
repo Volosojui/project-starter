@@ -62,6 +62,30 @@ or using yarn
 yarn dist
 ```
 
+### Deploy build version to gh-pages
+
+```bash
+npm run deploy
+```
+
+or using yarn
+
+```bash
+yarn deploy
+```
+
+### Deploy production version to gh-pages
+
+```bash
+npm run deploy:dist
+```
+
+or using yarn
+
+```bash
+yarn deploy:dist
+```
+
 ## Environments
 
 node@^10

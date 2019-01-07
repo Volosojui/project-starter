@@ -1,6 +1,6 @@
 {
   "name": "project-starter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "frontend",
   "keywords": [
     "project",
@@ -25,7 +25,9 @@
   "scripts": {
     "start": "gulp --debug --sourcemap=true",
     "build": "gulp build",
-    "dist": "NODE_ENV=production npm run build"
+    "dist": "NODE_ENV=production npm run build",
+    "deploy": "gulp deploy",
+    "deploy:dist": "NODE_ENV=production npm run deploy"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
