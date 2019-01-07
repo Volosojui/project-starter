@@ -32,16 +32,34 @@ This mode generates sourcemaps for styles and scripts, so you can always easily 
 npm run start
 ```
 
+or using yarn
+
+```bash
+yarn start
+```
+
 ### Compiles all files to folder `build` (no minification)
 
 ```bash
 npm run build
 ```
 
+or using yarn
+
+```bash
+yarn build
+```
+
 ### Compiles all files to production folder `dist` (with minification)
 
 ```bash
 npm run dist
+```
+
+or using yarn
+
+```bash
+yarn dist
 ```
 
 ## Environments
