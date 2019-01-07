@@ -1,0 +1,28 @@
+body:after {
+  display: none;
+  content: "xs";
+}
+
+@include breakpoint-up($breakpoint-sm-min) {
+  body:after {
+    content: "sm"
+  }
+}
+
+@include breakpoint-up($breakpoint-md-min) {
+  body:after {
+    content: "md"
+  }
+}
+
+@include breakpoint-up($breakpoint-lg-min) {
+  body:after {
+    content: "lg"
+  }
+}
+
+@include breakpoint-up($breakpoint-xl-min) {
+  body:after {
+    content: "xl"
+  }
+}

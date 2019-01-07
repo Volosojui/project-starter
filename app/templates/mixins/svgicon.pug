@@ -1,0 +1,4 @@
+mixin svgicon(icon)
+  span.svg-icon&attributes(attributes)(class='svg-icon--' + icon)
+    svg.svg-icon__symbol
+      use(xlink:href='#icon-' + icon)

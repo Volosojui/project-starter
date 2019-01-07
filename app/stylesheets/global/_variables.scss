@@ -1,0 +1,91 @@
+/*========================================
+// Colors
+========================================*/
+
+$color-black: #000;
+$color-white: #fff;
+
+$color-gray: #7f7f7f;
+$color-blue: #2196f3;
+
+$color-base: $color-black;
+
+$color-link: $color-blue;
+$color-link-hover: lighten($color-blue, 5%);
+
+
+/*========================================
+// Fonts
+========================================*/
+
+$font-family-helvetica-neue: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-helvetica-neue;
+
+$font-size-base: 14px;
+$line-height-base: 20px;
+
+
+/*========================================
+// Radius
+========================================*/
+
+$border-radius: 3px;
+
+
+/*========================================
+// Browser
+========================================*/
+
+$browser-context: 16;
+
+
+/*========================================
+// Breakpoints
+========================================*/
+
+// Min
+// Extra small screen / phone
+$breakpoint-xs-min: 0;
+
+// Small screen / phone
+$breakpoint-sm-min: 544px;
+
+// Medium screen / tablet
+$breakpoint-md-min: 768px;
+
+// Large screen / desktop
+$breakpoint-lg-min: 992px;
+
+// Extra large screen / wide desktop
+$breakpoint-xl-min: 1200px;
+
+// Max
+// Extra small screen / phone
+$breakpoint-xs-max: $breakpoint-sm-min - 1;
+
+// Small screen / phone
+$breakpoint-sm-max: $breakpoint-md-min - 1;
+
+// Medium screen / tablet
+$breakpoint-md-max: $breakpoint-lg-min - 1;
+
+// Large screen / desktop
+$breakpoint-lg-max: $breakpoint-xl-min - 1;
+
+
+/*========================================
+// Grid
+========================================*/
+
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+$container-gap: 40px;
+$container-max-width: 990px + $container-gap;
+
+
+/*========================================
+// Animations, transitions
+========================================*/
+
+$transition-duration: .2s;
