@@ -10,8 +10,8 @@ html.no-js
   body
     //- SVG store
     .svg-store
-      // inject:svg
-      // endinject
+      //- inject:svg
+      //- endinject
     //- end SVG store
 
     .layout
@@ -25,8 +25,7 @@ html.no-js
     block endBody
 
     //- Scripts
-    // inject:js
-    // endinject
+    script(src=config.JS_BUNDLE)
     //- end Scripts
 
     include ./analytics/yandex-metrika.pug

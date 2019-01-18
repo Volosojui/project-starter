@@ -2,6 +2,11 @@ const SRC = './app';
 const BUILD = './build';
 const DIST = './dist';
 
+const DEV_CSS_BUNDLE_NAME = 'bundle.css';
+const DEV_JS_BUNDLE_NAME = 'bundle.js';
+const PROD_CSS_BUNDLE_NAME = 'bundle.min.css';
+const PROD_JS_BUNDLE_NAME = 'bundle.min.js';
+
 module.exports = {
   clean: {
     dest: [BUILD, DIST]
@@ -103,14 +108,14 @@ module.exports = {
       sass: {
         src: SRC + '/stylesheets/local.scss',
         dest: BUILD + '/css',
-        outputName: 'bundle.css'
+        outputName: DEV_CSS_BUNDLE_NAME
       }
     },
     production: {
       sass: {
         src: SRC + '/stylesheets/production.scss',
         dest: DIST + '/css',
-        outputName: 'bundle.min.css'
+        outputName: PROD_CSS_BUNDLE_NAME
       }
     }
   },
@@ -140,19 +145,13 @@ module.exports = {
       svgicons: {
         src: SRC + '/svgicons/**/*.svg',
         options: {
-          base: SRC + '/svgicons'
+          base: SRC + '/svgicons',
+          // read: false
         }
       },
-      inject: {
-        src: [
-          BUILD + '/js/bundle.js',
-          BUILD + '/css/bundle.css'
-        ],
-        options: {
-          ignorePath: BUILD.replace('./', ''),
-          addRootSlash: false,
-          removeTags: true
-        }
+      data: {
+        css: 'css/' + DEV_CSS_BUNDLE_NAME,
+        js: 'js/' + DEV_JS_BUNDLE_NAME
       },
       dest: BUILD
     },
@@ -174,16 +173,9 @@ module.exports = {
           base: SRC + '/svgicons'
         }
       },
-      inject: {
-        src: [
-          DIST + '/js/bundle.min.js',
-          DIST + '/css/bundle.min.css'
-        ],
-        options: {
-          ignorePath: DIST.replace('./', ''),
-          addRootSlash: false,
-          removeTags: true
-        }
+      data: {
+        css: 'css/' + PROD_CSS_BUNDLE_NAME,
+        js: 'js/' + PROD_JS_BUNDLE_NAME
       },
       minifyCss: {
         src: DIST + '/css/**/*',

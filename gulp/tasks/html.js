@@ -10,7 +10,6 @@ const isDev = process.env.NODE_ENV !== 'production'
 const config = require('../config').pug[isDev ? 'local' : 'production']
 
 function pugToHtml(){
-  const sources = gulp.src(config.inject.src, {read: false});
   const svgs = gulp.src(config.svgicons.src, config.svgicons.options)
     .pipe(rename({prefix: 'icon-'}))
     .pipe(svgstore({inlineSvg: true}));
@@ -20,15 +19,22 @@ function pugToHtml(){
   }
 
   let pugOptions = {};
+  let pugData = {
+    config: {
+      isDev: isDev,
+      CSS_BUNDLE: config.data.css,
+      JS_BUNDLE: config.data.js
+    }
+  }
 
   if (isDev) pugOptions.pretty = true
+  pugOptions.data = pugData
 
   return gulp.src(config.src)
     .pipe(plumber())
     .pipe(pug(pugOptions))
-    .pipe(inject(sources, config.inject.options))
     .pipe(inject(svgs, {removeTags: true, transform: fileContents}))
-    .pipe(gulp.dest(config.dest));
+    .pipe(gulp.dest(config.dest))
 }
 
 // Imported css files

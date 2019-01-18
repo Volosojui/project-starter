@@ -1,5 +1,4 @@
 import path from 'path';
-// import webpack from 'webpack';
 import CompressionPlugin from 'compression-webpack-plugin';
 
 const SRC = './app';
