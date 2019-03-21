@@ -59,12 +59,6 @@
   }
 }
 
-@mixin list-style-none {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
 @mixin ellipsis {
   overflow: hidden;
   white-space: nowrap;
@@ -94,6 +88,41 @@
       background-size: $width $height;
     }
   }
+}
+
+
+/*========================================
+// Reset
+========================================*/
+
+@mixin list-style-none {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin button-reset-style {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: 0;
+  appearance: none;
+  outline: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@mixin input-reset-style {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: 0;
+  appearance: none;
+  outline: 0;
+  font-family: inherit;
 }
 
 
