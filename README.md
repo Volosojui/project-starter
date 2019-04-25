@@ -86,6 +86,20 @@ or using yarn
 yarn deploy:dist
 ```
 
+## Browser suppport
+
+```bash
+last 3 versions
+ie >= 11
+edge >= 12
+firefox >= 28
+chrome >= 21
+safari >= 8
+opera >= 12.1
+```
+
 ## Environments
 
-node@^10
+```bash
+node >= 10
+```
