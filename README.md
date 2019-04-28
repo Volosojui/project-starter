@@ -86,6 +86,28 @@ or using yarn
 yarn deploy:dist
 ```
 
+## Inline svg sprite
+
+If you would like to use this feature, you should:
+1) add any svg icon inside `svgicons` folder
+2) then uncomment the following lines:
+
+in `layout.pug`:
+
+```jade
+.svg-store
+  include ./../../svgicons/svgicons.svg
+```
+
+in `_bundle.scss`:
+
+```css
+@import 'partials/svg-store';
+@import 'partials/svg-icon';
+```
+
+__! If you skip the first step, you will get an error in the console__
+
 ## Browser suppport
 
 ```bash

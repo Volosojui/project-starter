@@ -19,6 +19,16 @@ module.exports = {
     },
     files: [BUILD + '/**']
   },
+  watch: {
+    scripts: './app/scripts/**/*',
+    iconfont: './app/iconfont/icons/*.svg',
+    svgicons: [
+      './app/svgicons/*.svg',
+      '!./app/svgicons/svgicons.svg'
+    ],
+    styles: './app/stylesheets/**/*',
+    pug: './app/templates/**/*'
+  },
   githubPages: {
     local: {
       src: BUILD + '/**/*',
@@ -129,6 +139,30 @@ module.exports = {
       dest: DIST + '/assets'
     }
   },
+  svgicons: {
+    local: {
+      src: [
+        `${SRC}/svgicons/**/*.svg`,
+        `!${SRC}/svgicons/svgicons.svg`
+      ],
+      options: {
+        base: SRC + '/svgicons',
+        // read: false
+      },
+      dest: `${SRC}/svgicons`
+    },
+    production: {
+      src: [
+        `${SRC}/svgicons/**/*.svg`,
+        `!${SRC}/svgicons/svgicons.svg`
+      ],
+      options: {
+        base: SRC + '/svgicons',
+        // read: false
+      },
+      dest: `${SRC}/svgicons`
+    }
+  },
   pug: {
     local: {
       src: [
@@ -142,13 +176,6 @@ module.exports = {
         '!' + SRC + '/templates/variables',
         '!' + SRC + '/templates/variables/**'
       ],
-      svgicons: {
-        src: SRC + '/svgicons/**/*.svg',
-        options: {
-          base: SRC + '/svgicons',
-          // read: false
-        }
-      },
       data: {
         css: 'css/' + DEV_CSS_BUNDLE_NAME,
         js: 'js/' + DEV_JS_BUNDLE_NAME
@@ -167,12 +194,6 @@ module.exports = {
         '!' + SRC + '/templates/variables',
         '!' + SRC + '/templates/variables/**'
       ],
-      svgicons: {
-        src: SRC + '/svgicons/**/*.svg',
-        options: {
-          base: SRC + '/svgicons'
-        }
-      },
       data: {
         css: 'css/' + PROD_CSS_BUNDLE_NAME,
         js: 'js/' + PROD_JS_BUNDLE_NAME

@@ -1,16 +1,17 @@
-import gulp from 'gulp'
+import gulp from 'gulp';
 
-import clean from './gulp/tasks/clean'
-import scripts from './gulp/tasks/scripts'
-import iconfont from './gulp/tasks/iconfont'
-import copy from './gulp/tasks/copy'
-import assets from './gulp/tasks/assets'
-import styles from './gulp/tasks/styles'
-import html from './gulp/tasks/html'
+import clean from './gulp/tasks/clean';
+import scripts from './gulp/tasks/scripts';
+import iconfont from './gulp/tasks/iconfont';
+import copy from './gulp/tasks/copy';
+import assets from './gulp/tasks/assets';
+import svgs from './gulp/tasks/svgs';
+import styles from './gulp/tasks/styles';
+import html from './gulp/tasks/html';
 
-import server from './gulp/tasks/server'
-import watch from './gulp/tasks/watch'
-import ghPages from './gulp/tasks/ghPages'
+import server from './gulp/tasks/server';
+import watch from './gulp/tasks/watch';
+import ghPages from './gulp/tasks/ghPages';
 
 const tasks = (cb) => {
   gulp.series(
@@ -18,7 +19,8 @@ const tasks = (cb) => {
       scripts,
       iconfont,
       copy,
-      assets
+      assets,
+      svgs
     ),
     styles,
     html

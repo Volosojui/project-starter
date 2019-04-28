@@ -1,23 +1,12 @@
-import gulp from 'gulp'
-import pug from 'gulp-pug'
-import svgstore from 'gulp-svgstore'
-import rename from 'gulp-rename'
-import inject from 'gulp-inject'
-import plumber from 'gulp-plumber'
-import cleanCSS from 'gulp-clean-css'
+import gulp from 'gulp';
+import pug from 'gulp-pug';
+import plumber from 'gulp-plumber';
+import cleanCSS from 'gulp-clean-css';
 
-const isDev = process.env.NODE_ENV !== 'production'
-const config = require('../config').pug[isDev ? 'local' : 'production']
+const isDev = process.env.NODE_ENV !== 'production';
+const config = require('../config').pug[isDev ? 'local' : 'production'];
 
 function pugToHtml(){
-  const svgs = gulp.src(config.svgicons.src, config.svgicons.options)
-    .pipe(rename({prefix: 'icon-'}))
-    .pipe(svgstore({inlineSvg: true}));
-
-  function fileContents(filePath, file){
-    return file.contents.toString();
-  }
-
   let pugOptions = {};
   let pugData = {
     config: {
@@ -27,14 +16,13 @@ function pugToHtml(){
     }
   }
 
-  if (isDev) pugOptions.pretty = true
-  pugOptions.data = pugData
+  if (isDev) pugOptions.pretty = true;
+  pugOptions.data = pugData;
 
   return gulp.src(config.src)
     .pipe(plumber())
     .pipe(pug(pugOptions))
-    .pipe(inject(svgs, {removeTags: true, transform: fileContents}))
-    .pipe(gulp.dest(config.dest))
+    .pipe(gulp.dest(config.dest));
 }
 
 // Imported css files
@@ -50,4 +38,4 @@ export default function html(cb){
   }
 
   return gulp.series(pugToHtml)(cb);
-}
+};

@@ -2,6 +2,10 @@
 // Base
 ========================================*/
 
+/*
+ You can use any css normalization here
+ (for example, https://necolas.github.io/normalize.css/)
+*/
 @import 'base/reset';
 
 
@@ -9,7 +13,10 @@
 // Vendor: before our settings
 ========================================*/
 
-@import './../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
+/*
+ Sample export css file:
+ @import './../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
+*/
 
 
 /*========================================
@@ -34,7 +41,10 @@
 // Fonts
 ========================================*/
 
-
+/*
+ Sample export local font:
+ @import 'fonts/font';
+*/
 
 
 /*========================================
@@ -48,10 +58,13 @@
 ========================================*/
 
 // Blocks
-@import 'partials/svg-store';
-@import 'partials/svg-icon';
-@import 'partials/button';
+/*
+ Uncomment rows below, if you want to use inline svg sprite:
+ @import 'partials/svg-store';
+ @import 'partials/svg-icon';
+*/
 @import 'partials/spinner';
+@import 'partials/button';
 
 // Sections
 
