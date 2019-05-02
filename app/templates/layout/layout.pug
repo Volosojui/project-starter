@@ -1,6 +1,6 @@
 include ./../mixins/mixins.pug
 
-block vars
+block globalVars
 
 doctype html
 
@@ -9,7 +9,7 @@ html.no-js
 
   body
     //- SVG store
-    //- Uncomment rows below, if you want to use inline svg sprite
+    //- Uncomment lines below, if you want to use inline svg sprite
     //- .svg-store
     //-   include ./../../svgicons/svgicons.svg
     //- end SVG store
@@ -27,5 +27,7 @@ html.no-js
     //- Scripts
     script(src=config.JS_BUNDLE)
     //- end Scripts
+
+    block endBodyScripts
 
     include ./analytics/yandex-metrika.pug
