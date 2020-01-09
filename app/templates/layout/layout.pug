@@ -1,33 +1,10 @@
-include ./../mixins/mixins.pug
+extends ./base.pug
 
-block globalVars
+block body
+  .layout
+    include ./../partials/header.pug
 
-doctype html
+    main.content
+      block content
 
-html.no-js
-  include ./head.pug
-
-  body
-    //- SVG store
-    //- Uncomment lines below, if you want to use inline svg sprite
-    //- .svg-store
-    //-   include ./../../svgicons/svgicons.svg
-    //- end SVG store
-
-    .layout
-      include ./../partials/header.pug
-
-      main.content
-        block content
-
-      include ./../partials/footer.pug
-
-    block endBody
-
-    //- Scripts
-    script(src=config.JS_BUNDLE)
-    //- end Scripts
-
-    block endBodyScripts
-
-    include ./analytics/yandex-metrika.pug
+    include ./../partials/footer.pug

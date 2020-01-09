@@ -1,0 +1,19 @@
+extends ./layout/layout.pug
+
+block globalVars
+  - var PAGE_TITLE = 'Page list'
+  - var PAGE_DESCRIPTION = 'All pages'
+
+block body
+  -
+    var pages = [
+      {url: 'index.html', title: 'Index page'}
+    ]
+
+  div(style="padding: 1rem;")
+    h1 Page list
+    ol
+      each page in pages
+        li
+          a(href=page.url title=page.title)= page.title
+

@@ -1,0 +1,31 @@
+include ./../mixins/mixins.pug
+
+include ./globalVars.pug
+
+doctype html
+
+html(lang=CURRENT_LANG)
+  include ./head.pug
+
+  body
+    block bodyStart
+
+    //- SVG store
+    //- Uncomment lines below, if you want to use inline svg sprite
+    //- .svg-store
+    //-   include ./../../svgicons/svgicons.svg
+    //- end SVG store
+
+    block body
+
+    block bodyEnd
+
+    //- Scripts
+    block bodyVendorScripts
+
+    script(src=config.JS_BUNDLE)
+
+    block bodyCustomScripts
+    //- end Scripts
+
+    include ./analytics/yandex-metrika.pug
