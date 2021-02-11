@@ -9,7 +9,7 @@ const PROD_JS_BUNDLE_NAME = 'bundle.min.js';
 
 module.exports = {
   clean: {
-    dest: [BUILD, DIST]
+    dest: [BUILD]
   },
   browserSync: {
     port: 9000,
@@ -37,7 +37,7 @@ module.exports = {
       }
     },
     production: {
-      src: DIST + '/**/*',
+      src: BUILD + '/**/*',
       options: {
         message: 'gh-pages'
       }
@@ -61,15 +61,15 @@ module.exports = {
     production: {
       favicons: {
         src: SRC + '/favicons/*',
-        dest: DIST
+        dest: BUILD
       },
       images: {
         src: [],
-        dest: DIST + '/assets'
+        dest: BUILD + '/assets'
       },
       fonts: {
         src: SRC + '/fonts/**/*',
-        dest: DIST + '/fonts'
+        dest: BUILD + '/fonts'
       }
     }
   },
@@ -102,7 +102,7 @@ module.exports = {
           normalize: true,
           formats: ['woff2', 'woff', 'ttf']
         },
-        dest: DIST + '/fonts'
+        dest: BUILD + '/fonts'
       },
       templates: {
         styles: {
@@ -124,7 +124,7 @@ module.exports = {
     production: {
       sass: {
         src: SRC + '/stylesheets/production.scss',
-        dest: DIST + '/css',
+        dest: BUILD + '/css',
         outputName: PROD_CSS_BUNDLE_NAME
       }
     }
@@ -136,7 +136,7 @@ module.exports = {
     },
     production: {
       src: SRC + '/assets/**/*',
-      dest: DIST + '/assets'
+      dest: BUILD + '/assets'
     }
   },
   svgicons: {
@@ -199,10 +199,10 @@ module.exports = {
         js: 'js/' + PROD_JS_BUNDLE_NAME
       },
       minifyCss: {
-        src: DIST + '/css/**/*',
-        dest: DIST + '/css'
+        src: BUILD + '/css/**/*',
+        dest: BUILD + '/css'
       },
-      dest: DIST
+      dest: BUILD
     }
   }
 }

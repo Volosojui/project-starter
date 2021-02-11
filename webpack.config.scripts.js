@@ -3,7 +3,6 @@ import CompressionPlugin from 'compression-webpack-plugin';
 
 const SRC = './app';
 const BUILD = './build';
-const DIST = './dist';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -27,11 +26,11 @@ if (isProduction) {
 module.exports = {
   context: path.join(__dirname, SRC),
 
-  entry: isProduction ? './scripts/production.js' : './scripts/local.js',
+  entry: './scripts/index.js',
 
   output: {
-    path: path.join(__dirname, isProduction ? DIST : BUILD),
-    filename: isProduction ? 'js/bundle.min.js' : 'js/bundle.js'
+    path: path.join(__dirname, BUILD),
+    filename: isProduction ? 'js/bundle.min.js' : 'js/bundle.js',
   },
 
   mode: isProduction ? 'production' : 'development',
@@ -41,31 +40,26 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/(node_modules|bower_components)/],
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env']
-            }
-          }
-        ]
-      }
-    ]
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
   },
 
   devtool: devtool,
 
   optimization: {
-    minimize: isProduction ? true : false
+    minimize: isProduction,
   },
 
   resolve: {
     modules: ['bower_components', 'node_modules'],
     extensions: ['.js'],
-    alias: {
-      'jquery': 'jquery/dist/jquery',
-    }
+    // alias: {
+    //   'jquery': 'jquery/dist/jquery',
+    // },
   },
 
-  plugins: plugins
+  plugins: plugins,
 }

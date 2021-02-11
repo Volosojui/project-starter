@@ -79,7 +79,7 @@ $button-lg-font-size: 18px;
 // Block
 .button--block {
   width: 100%;
-  display: block;
+  display: flex;
   @include ellipsis;
 }
 
@@ -89,32 +89,6 @@ $button-lg-font-size: 18px;
 
 .button--rounded {
   border-radius: rem(100px);
-}
-
-.button--shadow {
-  box-shadow: rem(2px) rem(2px) rem(4px) rgba($color-black, .18);
-}
-
-// White
-.button--white {
-  @include button-style($color-white, $color-blue, $color-blue);
-
-  &:hover {
-    background-color: lighten($color-blue, 44%);
-  }
-
-  &.button--outline {
-    @include button-outline($color-white, $color-white, #2672de, #2672de, $color-white);
-  }
-
-  &.button--alphaOutline {
-    @include button-outline(rgba($color-white, .4), $color-white, #2672de, #2672de, $color-white);
-  }
-
-  &.button--disabled,
-  &[disabled] {
-    background-color: lighten(#a2b2c4, 8%);
-  }
 }
 
 // Blue
@@ -131,23 +105,4 @@ $button-lg-font-size: 18px;
     @include button-outline($color-blue, $color-blue, $color-blue, $color-blue, $color-white);
     background-color: transparent;
   }
-}
-
-.button--gray {
-  $color-gray: #c1c1c1;
-  @include button-style($color-gray, $color-white, $color-white);
-
-  &.button--disabled,
-  &[disabled] {
-    opacity: .8;
-  }
-
-  &.button--outline {
-    @include button-outline($color-gray, $color-base, $color-blue, $color-blue, $color-white);
-    background-color: transparent;
-  }
-}
-
-.button--send {
-  min-width: rem(98px);
 }

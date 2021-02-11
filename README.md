@@ -13,7 +13,7 @@ git clone git@github.com:Volosojui/project-starter.git project-folder-name && cd
 then install all the packages using npm
 
 ```bash
-npm i
+npm ci
 ```
 
 or using yarn
@@ -53,13 +53,13 @@ yarn build
 ### Compiles all files to production folder `dist` (with minification)
 
 ```bash
-npm run dist
+npm run build:prod
 ```
 
 or using yarn
 
 ```bash
-yarn dist
+yarn build:prod
 ```
 
 ### Deploy build version to gh-pages
@@ -77,13 +77,13 @@ yarn deploy
 ### Deploy production version to gh-pages
 
 ```bash
-npm run deploy:dist
+npm run deploy:build:prod
 ```
 
 or using yarn
 
 ```bash
-yarn deploy:dist
+yarn deploy:build:prod
 ```
 
 ## Inline svg sprite
@@ -111,17 +111,12 @@ __! If you skip the first step, you will get an error in the console__
 ## Browser suppport
 
 ```bash
-last 3 versions
-ie >= 11
-edge >= 12
-firefox >= 28
-chrome >= 21
-safari >= 8
-opera >= 12.1
+> 0.25%
+not dead
 ```
 
 ## Environments
 
 ```bash
-node >= 10
+node >= 14
 ```

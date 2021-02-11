@@ -1,7 +1,2 @@
-last 3 versions
-ie >= 11
-edge >= 12
-firefox >= 28
-chrome >= 21
-safari >= 8
-opera >= 12.1
+> 0.25%
+not dead

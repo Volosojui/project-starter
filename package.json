@@ -1,6 +1,6 @@
 {
   "name": "project-starter",
-  "version": "0.1.9",
+  "version": "0.2.1",
   "description": "frontend",
   "keywords": [
     "project",
@@ -25,43 +25,37 @@
   "scripts": {
     "start": "gulp --debug --sourcemap=true",
     "build": "gulp build",
-    "dist": "NODE_ENV=production npm run build",
+    "build:prod": "NODE_ENV=production gulp build",
     "deploy": "gulp deploy",
-    "deploy:dist": "NODE_ENV=production npm run deploy"
+    "deploy:build:prod": "NODE_ENV=production npm run deploy"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.4",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/register": "^7.10.5",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.12",
-    "compression-webpack-plugin": "^5.0.1",
-    "del": "^5.1.0",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/register": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "compression-webpack-plugin": "^7.1.2",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cheerio": "^1.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-consolidate": "^0.2.0",
     "gulp-gh-pages": "^0.5.4",
-    "gulp-iconfont": "^10.0.3",
+    "gulp-iconfont": "^11.0.0",
     "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-svgstore": "^7.0.1",
     "path": "^0.12.7",
-    "webpack": "^4.44.1"
+    "webpack": "^5.21.2"
   },
-  "dependencies": {
-    "@babel/polyfill": "^7.10.4",
-    "bootstrap": "^4.5.2",
-    "jquery": "^3.5.1"
-  },
+  "dependencies": {},
   "engines": {
-    "node": ">=10",
-    "npm": ">=6"
+    "node": ">=14"
   }
 }
